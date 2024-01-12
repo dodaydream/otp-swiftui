@@ -1,0 +1,37 @@
+{
+    "configVersion": "20240103",
+    "timetableUpdates" : {
+      "purgeExpiredData" : false,
+      "maxSnapshotFrequency" : "2s"
+    },
+    "updaters": [
+      {
+        "type" : "real-time-alerts",
+        "frequency" : "1m",
+        "url": "http://gtfs.ltconline.ca/Alert/Alerts.pb",
+        "feedId" : "LTC",
+        "headers" : {
+          "User-Agent": "OpenTripPlanner/2.4.0"
+        }
+      },
+      {
+        "type" : "stop-time-updater",
+        "frequency" : "1m",
+        "backwardsDelayPropagationType" : "REQUIRED_NO_DATA",
+        "url": "http://gtfs.ltconline.ca/TripUpdate/TripUpdates.pb",
+        "feedId" : "LTC",
+        "headers" : {
+          "User-Agent": "OpenTripPlanner/2.4.0"
+        }
+      },
+      {
+        "type": "vehicle-positions",
+        "url": "http://gtfs.ltconline.ca/Vehicle/VehiclePositions.pb",
+        "feedId": "LTC",
+        "frequency": "1m",
+        "headers": {
+            "User-Agent": "OpenTripPlanner/2.4.0"
+        }
+      }
+    ]
+}

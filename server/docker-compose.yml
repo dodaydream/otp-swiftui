@@ -1,0 +1,10 @@
+version: '3.6'
+
+services:
+  opentripplanner:
+    image: 'opentripplanner/opentripplanner:2.4.0'
+    volumes:
+      - ./data:/var/opentripplanner
+    command: '--load --serve'
+    ports:
+      - 8080:8080

@@ -1,0 +1,9 @@
+{
+    "transitFeeds": [
+        {
+            "type": "gtfs",
+            "feedId": "LTC",
+            "source": "https://www.londontransit.ca/gtfsfeed/google_transit.zip"
+        }
+    ]
+}
